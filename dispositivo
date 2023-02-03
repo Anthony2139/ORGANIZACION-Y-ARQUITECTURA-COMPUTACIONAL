@@ -1,0 +1,11 @@
+import psutil
+
+def list_devices():
+    devices = []
+    for device in psutil.disk_partitions():
+        devices.append(device.device)
+    return devices
+
+print("Dispositivos de entrada/salida:")
+for device in list_devices():
+    print(device)
